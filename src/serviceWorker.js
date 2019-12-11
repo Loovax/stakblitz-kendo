@@ -133,20 +133,3 @@ export function unregister() {
     });
   }
 }
-wnd = $("#wnd");
-wnd.kendoWindow({
-	visible: false,
-  width: "340px",
-  height: "200px",
-  resizable: false,   
-  title: "Recipe",
-	open: function(e) {
-		var windom = e.sender.element.closest(".k-window");
-    e.sender.setOptions({
-			 position: {
-				 top: $(window).scrollTop() + Math.max(0, ($(window).height() - windom.outerHeight(true))),
-				 left: $(window).scrollLeft() + Math.max(0, ($(window).width() - windom.outerWidth(true)) / 2)
-			 }
-		});
-  }
-}).data("kendoWindow").open();
